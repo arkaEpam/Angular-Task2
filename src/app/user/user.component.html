@@ -1,0 +1,26 @@
+<!-- <p>user works!</p> -->
+<div class="wholePage" *ngFor="let user of users">
+        <div 
+        class="card" 
+        [ngClass]="
+            {active : user.isDeleted == false,
+            deactivate : user.isDeleted == true}"
+            *ngIf="user.isDeleted == !hasRoute('active')"
+        >
+            <div class="cards-data">
+                <div class="card-body">{{user.firstName}}</div>
+                <div class="action">
+                    <button
+                    *ngIf="hasRoute('active')"
+                    type="button"
+                    (click)="deleteUser(user.id)"
+                    >Deactivate</button>
+                    <button
+                    *ngIf="hasRoute('deleted')"
+                    type="button"
+                    (click)="activateUser(user.id)"
+                    >Activate</button>
+                </div>
+            </div>
+        </div>
+</div>

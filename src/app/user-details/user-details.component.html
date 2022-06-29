@@ -1,0 +1,30 @@
+<!-- <p>user-details works!</p> -->
+<div class="manage">
+    <div class="display-all">
+        <div *ngFor="let user of users">
+            <div class="cards-data"[style.borderColor]="user.isDeleted ? 'red':'green'">
+                <div class="card-body">{{user.firstName}}</div>
+                <div class="action">
+                    <button (click)="details(user.id)">Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let user of users">
+        <div class="detailed-version" *ngIf="user.id == id">
+            <div class="display-specific-cards-data">
+                <h3>{{user.firstName}} {{user.lastName}}</h3>
+                <span [style.color]="user.isDeleted ? 'red':'green'">
+                    <p *ngIf="user.isDeleted == true">Deleted</p>
+                    <p *ngIf="user.isDeleted == false">Active</p>
+                </span>
+                <p>FirstName :  {{user.firstName}}</p>
+                <p>LastName :  {{user.lastName}}</p>
+                <p>Login Id :  {{user.login}}</p>
+                <p>password :  {{user.password}}</p>
+                <p>Age :  {{user.age}}</p>
+            </div>
+
+        </div>
+    </div>
+</div>

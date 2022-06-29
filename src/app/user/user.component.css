@@ -1,0 +1,32 @@
+.cards-data{
+    display: flex;
+    flex-direction: column;
+    /* border-style: solid; */
+    margin: 2%;
+}
+
+.card-body{
+    display: flex;
+    justify-content: start;
+    /* margin: 2%; */
+}
+.action{
+    /* margin: 1%; */
+    display: flex;
+    justify-content: end;
+}
+button{
+    padding: 1%;
+    background-color: #0000FF;
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+}
+.active{
+    border: 1px solid green;
+    margin: 2%;
+}
+.deactivate{
+    border: 1px solid red;
+    margin: 2%;
+}
